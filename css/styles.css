@@ -5,6 +5,7 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-bgc-color: #fff;
+  --card-set-gap: 30px;
 }
 
 body {
@@ -17,15 +18,47 @@ body {
 .accent {
   color: var(--title-text-color);
 }
+.header {
+  border-bottom: 1px solid grey;
+}
 
 .link {
   text-decoration: none;
 }
-.page-header {
+
+.menu-item {
+  display: flex;
+  margin: 0 50px 0 0;
+  align-items: center;
+}
+.page {
+  display: flex;
+  flex-wrap: wrap;
   width: 1200px;
   margin: 0 auto;
+  height: 80px;
+}
+.page-container {
+  display: flex;
+  align-items: center;
+}
+.page-header {
+  display: flex;
+  flex: 1 1 auto;
 
   /* outline: 2px solid tomato; */
+}
+.page-header-list {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-contacts {
+  margin-right: 50px;
+  justify-content: flex-end;
+}
+.page-container.contacts {
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .container.hero {
@@ -41,7 +74,7 @@ body {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 94px 15px;
+  padding-top: 94px;
 
   /* outline: 2px solid tomato; */
 }
@@ -69,6 +102,11 @@ ol {
   margin: 0;
   padding-left: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 /* ----------------------Шапка сайта---------------------- */
 
@@ -84,6 +122,7 @@ ol {
   font-weight: 700;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-right: 95px;
 }
 
 .nav-link {
@@ -111,12 +150,14 @@ ol {
 }
 .button {
   border-radius: 4px;
+  border-color: transparent;
   color: var(--title-text-color);
   cursor: pointer;
   background: #f5f4fa;
   font-weight: 500;
   line-height: 1.88;
   padding: 6px 22px;
+  margin: 0 8px;
   min-width: 73px;
   display: flex;
   align-items: center;
@@ -196,9 +237,7 @@ ul {
   line-height: 1.16;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
-}
-.about {
-  padding: 94px 0;
+  text-align: center;
 }
 .about .title {
   font-size: 14px;
@@ -215,15 +254,14 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.team {
-  padding: 94px 0;
-}
+
 .team .name {
   font-weight: 500;
   line-height: 1.18;
   font-size: 16px;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 10px;
 }
 .team .position {
   line-height: 1.18;
@@ -240,6 +278,14 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.advantages {
+  display: flex;
+}
+.whatwedo {
+  display: flex;
+  margin-bottom: 94px;
 }
 
 /* ----------------------Футер---------------------- */
@@ -287,25 +333,71 @@ ul {
 
 /* ----------------------portfolio.html---------------------- */
 
+.hero.secondary {
+  background-color: #fff;
+}
 .progect-name {
   line-height: 2;
+  display: flex;
   font-size: 18px;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
+  margin-left: auto;
+  margin-bottom: 4px;
 }
 
 .description {
   line-height: 1.88;
+  display: flex;
   letter-spacing: 0.03em;
   font-size: 16px;
   color: var(--primary-text-color);
+  margin-left: auto;
 }
 
-.cards li {
+.card-set .item {
   background: #ffffff;
   border: 1px solid #eeeeee;
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+
+  /* outline: 1px solid teal; */
 }
-.cards {
+.card-set {
   display: flex;
   flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
+  padding-bottom: 94px;
+}
+
+.item * {
+  /* outline: 1px solid red; */
+}
+.card-content {
+  padding: 20px 24px;
+}
+.ourteam {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
+}
+.team-content {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+}
+.item-team {
+  width: 270px;
+  height: 368px;
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+
+  text-align: center;
+}
+.team {
+  padding-bottom: 94px;
+  background-color: #f5f4fa;
 }
